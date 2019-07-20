@@ -3,6 +3,10 @@ The client used the `model/action` syntax. All commands return promises (async f
 
 Each function takes query, values and options arguments depending on the action. Most mongodb options and query parameters are supported.
 
+### Install
+`npm i mongopath`
+
+### Usage
 ```javascript
 // Connect to database
 const connection = require('mongopath')
