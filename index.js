@@ -47,6 +47,7 @@ module.exports = async function({ url = OPT.url, connection = OPT.connection, na
       }
 
       return (async function() {
+        let result
         switch(action) {
           case 'find':
             return await getCursor().toArray()
