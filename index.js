@@ -5,7 +5,8 @@ const OPT = {
   name: 'mongopath',
   connection: {
     poolSize: 100,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
   }
 }
 
