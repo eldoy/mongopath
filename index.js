@@ -18,7 +18,7 @@ module.exports = async function({ url = OPT.url, connection = OPT.connection, na
     try {
       client = await MongoClient.connect(url, connection)
     } catch (e) {
-      await new Promise(r => setTimeout(() => r(), 50))
+      await new Promise(r => setTimeout(r, 50))
     }
   }
   const database = client.db(name)
