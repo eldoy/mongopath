@@ -1,7 +1,7 @@
 # Mongopath MongoDB Client
-The client uses the `model/action` syntax. All commands return promises (async functions), so remember to use await. Ids are stored as strings unless overridden.
+The client uses the `model/command` syntax. All commands return promises (async functions), so remember to use await. Ids are stored as strings unless overridden.
 
-Each function takes query, values and options arguments depending on the action. Most mongodb options and query parameters are supported.
+Each function takes query, values and options arguments depending on the command. Most mongodb options and query parameters are supported.
 
 ### Install
 `npm i mongopath`

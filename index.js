@@ -24,12 +24,12 @@ module.exports = async function({ url = OPT.url, connection = OPT.connection, na
   const database = client.db(name)
 
   return function(path) {
-    const [model, action] = path.split('/')
+    const [model, command] = path.split('/')
     const collection = database.collection(model)
 
     return function(...args) {
       const [query = {}, values = {}, options = {}] = (function(){
-        switch(action) {
+        switch(command) {
           case 'insert': return [undefined, args[0], args[1]]
           case 'update': return args
           default: return [args[0], undefined, args[1]]
@@ -49,7 +49,7 @@ module.exports = async function({ url = OPT.url, connection = OPT.connection, na
 
       return (async function() {
         let result
-        switch(action) {
+        switch(command) {
           case 'find':
             return await getCursor().toArray()
           case 'get':
